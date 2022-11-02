@@ -13,6 +13,7 @@ require "koneksi.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styleData.css">
     <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/styleSearch.css">
     <title>DAFTAR PESANAN</title>
 </head>
 
@@ -22,10 +23,18 @@ require "koneksi.php";
         <div class="list-header">
             <ul>
                 <li><button id="switch"><img src="images/night-mode.png" width="50px" height="50px"></button></li>
-                <li><a href="http://localhost/Posttest7/beranda.php" style="text-decoration: none;">Home</a></li>
+                <li><a href="http://localhost/POSTTEST7-WEB/Posttest7/beranda.php" style="text-decoration: none;">Home</a></li>
                 <li><a href="aboutme.php" style="text-decoration: none;">About Me</a></li>
+                <li><a href="logout.php" style="text-decoration: none;">Logout</a></li>
             </ul> 
         </div>
+    </div>
+    <br><br>
+    <div class="cari">
+        <form action="" method="get">
+            <input type="search" name="search" id="search" placeholder="Cari Nama" class="search">
+            <input type="submit" name="submit" value="CARI" class="button-search">
+        </form>
     </div>
     <br><br>
     <div class="tabel center" style="overflow-x: auto;">
@@ -53,9 +62,15 @@ require "koneksi.php";
             </thead>
             <tbody>
                 <?php
-                $query = mysqli_query($db, "SELECT * FROM laundry INNER JOIN gambar ON laundry.id=gambar.id");
-                // $query = mysqli_query($db, "SELECT * FROM laundry");
+                $no = 1;
+                if (isset($_GET['submit'])) {
+                    $search = $_GET['search'];
+                    $query = mysqli_query($db, "SELECT * FROM laundry INNER JOIN gambar ON laundry.id=gambar.id WHERE nama LIKE '%$search%'");;
+                } else {
+                    $query = mysqli_query($db, "SELECT * FROM laundry INNER JOIN gambar ON laundry.id=gambar.id");
+                }
                 $i = 1;
+                // $query = mysqli_query($db, "SELECT * FROM laundry");
                 while ($row = mysqli_fetch_assoc($query)) {
                 ?>
                 <tr>

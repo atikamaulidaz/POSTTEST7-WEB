@@ -1,5 +1,9 @@
 <?php
 require "koneksi.php";
+session_start();
+if (!isset($_SESSION['login'])) {
+    header("Location: login.php");
+}
 if(isset($_POST['submit'])){
     $nama = $_POST['nama'];
     $alamat = $_POST['alamat'];

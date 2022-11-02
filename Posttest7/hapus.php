@@ -1,5 +1,9 @@
 <?php
 require "koneksi.php";
+session_start();
+if (!isset($_SESSION['login'])) {
+    header("Location: login.php");
+}
 if(isset($_GET['id'])){
   $query_lihat = mysqli_query($db, "SELECT * FROM gambar WHERE id = $_GET[id]");
   $result = mysqli_fetch_assoc($query_lihat);

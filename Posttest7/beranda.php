@@ -15,7 +15,6 @@ if (!isset($_SESSION['login'])) {
     <script>
         alert("Selamat Datang Di Website Laundry Express");
     </script>
-    <!-- <script src="java.js"></script> -->
 </head>
 <body>
     <div class="header">
@@ -27,14 +26,10 @@ if (!isset($_SESSION['login'])) {
                 <li><a href="aboutme.php" style="text-decoration: none;">About Me</a></li>
                 <li><a href="data.php" style="text-decoration: none;">Buat Pesanan</a></li>
                 <li><a href="logout.php" style="text-decoration: none;">Logout</a></li>
-                <!-- <li><a href="login.php" style="text-decoration: none;">Login/Daftar</a></li> -->
             </ul> 
         </div>
     </div>
     <div class="main">
-        <!-- <h1>Halo, </h1>
-        <div id="halo">
-            <h1>nama</h1> -->
         </div>
         <div class="logo">
             <center><img src="images/laundry.png"></center>
