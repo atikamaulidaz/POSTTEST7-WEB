@@ -23,7 +23,7 @@ if (!isset($_SESSION['login'])) {
         <div class="list-header">
             <ul>
                 <li><button id="switch"><img src="images/night-mode.png" width="50px" height="50px"></button></li>
-                <li><a href="http://localhost/Posttest7/beranda.php" style="text-decoration: none;">Home</a></li>
+                <li><a href="http://localhost/POSTTEST7-WEB/Posttest7/beranda.php" style="text-decoration: none;">Home</a></li>
                 <li><a href="aboutme.php" style="text-decoration: none;">About Me</a></li>
                 <li><a href="data.php" style="text-decoration: none;">Buat Pesanan</a></li>
                 <li><a href="logout.php" style="text-decoration: none;">Logout</a></li>

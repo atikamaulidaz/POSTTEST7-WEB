@@ -1,16 +1,10 @@
 <?php
 session_start();
-if(isset($_POST["regisSubmit"])){
-    $_SESSION["regisSubmit"] = $_POST["regisSubmit"];
-    $_SESSION["regisNama"] = $_POST["regisNama"];
-    $_SESSION["regisAlamat"] = $_POST["regisAlamat"];
-    $_SESSION["regisNoHp"] = $_POST["regisNoHp"];
-    $_SESSION["regisUsername"] = $_POST["regisUsername"];
-    // $_SESSION["regisPassword"] = $_POST["regisPassword"];
-    // $_SESSION["konfirPass"] = $_POST["konfirPass"];
+if (!isset($_SESSION['login'])) {
+    header("Location: login.php");
 }
-// var_dump($_SESSION);
-// var_dump($_GET);
+$nama = $_SESSION["nama"];
+$username = $_SESSION["username"];  
 ?>
 
 <!DOCTYPE html>
@@ -51,22 +45,12 @@ if(isset($_POST["regisSubmit"])){
                          <tr>
                              <td>Nama Lengkap</td>
                              <td>:</td>
-                             <td><?php echo $_SESSION["regisNama"];?></td>
-                         </tr>
-                         <tr>
-                             <td>Alamat Lengkap</td>
-                             <td>:</td>
-                             <td><?php echo $_SESSION["regisAlamat"];?></td>
-                         </tr>
-                         <tr>
-                             <td>No. HP</td>
-                             <td>:</td>
-                             <td><?php echo $_SESSION["regisNoHp"];?></td>
+                             <td><?php echo $nama?></td>
                          </tr>
                          <tr>
                              <td>Username</td>
                              <td>:</td>
-                             <td><?php echo $_SESSION["regisUsername"];?></td>
+                             <td><?php echo $username?></td>
                          </tr>
                          <!-- <tr>
                             <td>Hobi</td>

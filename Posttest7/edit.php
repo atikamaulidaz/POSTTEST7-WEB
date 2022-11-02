@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION['login'])) {
+    header("Location: login.php");
+}
+
 require "koneksi.php";
 if(isset($_GET['id'])){
     $query = mysqli_query($db, "SELECT * FROM laundry JOIN gambar on laundry.id = gambar.id WHERE laundry.id = $_GET[id]");

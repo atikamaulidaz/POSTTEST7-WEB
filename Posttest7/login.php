@@ -9,6 +9,8 @@ if(isset($_POST["submit"])){
         $username = $result['username'];
         if(password_verify($password,$result['password'])){
             $_SESSION['login'] = true;
+            $_SESSION['nama'] = $result["nama"];
+            $_SESSION['username'] = $result['username'];
             echo "
             <script>
                 alert('Selamat Datang $username');
